@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today in History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Today in History</h1>
+    <button id="themeToggle" class="theme-btn">🌞</button>
+  </header>
+
+  <!-- Search Section (Prominent) -->
+<section>
+  <h2>Historical Events Today</h2>
+  <div id="today-events" class="card-container"></div>
+</section>
+
+<!-- Search Section (after Today events) -->
+<section class="search-area">
+  <h2>Search Historical Events by Date</h2>
+  <p>Enter a month and day to see events, births, and deaths</p>
+  <div class="search-inputs">
+    <input type="number" id="month" placeholder="Month (1-12)" min="1" max="12">
+    <input type="number" id="day" placeholder="Day (1-31)" min="1" max="31">
+    <button id="search-btn">Search</button>
+  </div>
+</section>
+
+<!-- Search results -->
+<section>
+  <h2>Search Results</h2>
+  <div id="search-results" class="card-container"></div>
+</section>
+
+
+
+  <!-- JS Modules -->
+  <script type="module" src="theme.js"></script>
+  <script type="module">
+    import { loadTodayHistory } from './wiki.js';
+    import { setupCustomDateSearch } from './muffin.js';
+
+    loadTodayHistory();
+    setupCustomDateSearch();
+  </script>
+  <div id="footer-badge" title="Made by Aneesh Kumar Mourya | v1.0.00.0 | Contact: aneeshkrmourya@gmail.com">
+    <a href="mailto:aneeshkrmourya@gmail.com">© Aneesh 2025</a>
+  </div>
+
+
+
+</body>
+</html>
